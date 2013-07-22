@@ -11,7 +11,7 @@ exports.testConnection = function(test){
   	host: config.mysql.host,
   	user: config.mysql.user,
   	password: config.mysql.password,
-  	port: config.mysql.port
+  	port: config.mysql.port,
   	database: 'feedbackdb'
   });
 
@@ -39,5 +39,4 @@ exports.testDB = function(test){
 			test.done();
  		});
 	});
-	test.done();
 }
