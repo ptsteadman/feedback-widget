@@ -6,28 +6,12 @@ exports.testTesting = function(test){
 	test.done();
 }
 
-exports.testConnection = function(test){
-	  var connection = mysql.createConnection({
-  	host: config.mysql.host,
-  	user: config.mysql.user,
-  	password: config.mysql.password,
-  	port: config.mysql.port,
-  	database: 'feedbackdb'
-  });
-
-  connection.connect();	
-	test.ok(connection, "connection is not undefined");
-	test.done();
-
-}
-
 exports.testDB = function(test){
 	  var connection = mysql.createConnection({
-  	host: config.mysql.host,
+  	host: 'feedback-widget-db.czwvwkbas6cq.us-west-2.rds.amazonaws.com;dbname=feedbackdb',
   	user: config.mysql.user,
   	password: config.mysql.password,
-  	port: config.mysql.port,
-  	database: 'feedbackdb'
+  	port: config.mysql.port
   });
 
   connection.connect(function(err){
