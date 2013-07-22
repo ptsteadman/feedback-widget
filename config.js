@@ -1,5 +1,5 @@
 var config = {}
-
+//test
 config.mysql = {};
 
 config.mysql.host = process.env.MYSQL_HOST ||'host';
