@@ -9,9 +9,9 @@ exports.testTesting = function(test){
 exports.testDB = function(test){
 	  var connection = mysql.createConnection({
   	host: 'feedback-widget-db.czwvwkbas6cq.us-west-2.rds.amazonaws.com;dbname=feedbackdb',
-  	user: config.mysql.user,
-  	password: config.mysql.password,
-  	port: config.mysql.port
+  	user: 'priceline',
+  	password: 'priceline',
+  	port: '3306'
   });
 
   connection.connect(function(err){
