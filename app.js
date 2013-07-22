@@ -1,6 +1,7 @@
 var express = require('express')
   , routes = require('./routes')
   , user = require('./routes/user')
+  , feedback = require('./routes/feedback')
   , path = require('path');
 
 var app = express();
@@ -23,6 +24,6 @@ if ('development' == app.get('env')) {
 
 app.get('/', routes.index);
 app.get('/users', user.list);
-app.post('/', routes.feedback);
+app.post('/', feedback.post);
 
 app.listen(3003);
