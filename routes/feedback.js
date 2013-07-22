@@ -13,9 +13,19 @@ exports.post = function(req,res){
   	port: config.mysql.port
   });
 
-  connection.connect();
-
   data = req.body;
+
+  connection.connect(function(err){
+  	if (err) throw err;
+  	connection.query('USE fbdb');
+ 		connection.query("INSERT INTO feedback VALUES('2', '" + data['free-text'] + "')", function(err, result){
+ 			if (err) throw err;
+ 			connection.query('SELECT * FROM feedback', function(err, rows){
+ 				if (err) throw err;
+ 				console.log(rows);
+ 			});
+ 		});
+	});
   console.log(data['free-text']);
   res.send(200);
 };
