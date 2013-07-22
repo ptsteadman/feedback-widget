@@ -8,7 +8,7 @@ exports.testTesting = function(test){
 
 exports.testDB = function(test){
 	  var connection = mysql.createConnection({
-  	host: 'feedback-widget-db.czwvwkbas6cq.us-west-2.rds.amazonaws.com;dbname=feedbackdb',
+  	host: 'feedback-widget.czwvwkbas6cq.us-west-2.rds.amazonaws.com:3306;dbname=fbdb',
   	user: 'priceline',
   	password: 'priceline',
   	port: '3306'
