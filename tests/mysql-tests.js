@@ -12,6 +12,7 @@ exports.testConnection = function(test){
   	user: config.mysql.user,
   	password: config.mysql.password,
   	port: config.mysql.port
+  	database: 'feedbackdb'
   });
 
   connection.connect();	
@@ -30,6 +31,7 @@ exports.testDB = function(test){
   });
 
   connection.connect(function(err){
+  	console.log(err);
  		connection.query('CREATE TABLE feedback(ID int, fbText varchar(255))');
  		connection.query('INSERT INTO feedback VALUES(1, test)');
  		connection.query('SELECT * FROM feedback', function(err, rows){
@@ -37,4 +39,5 @@ exports.testDB = function(test){
 			test.done();
  		});
 	});
+	test.done();
 }
