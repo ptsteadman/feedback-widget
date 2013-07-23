@@ -37,13 +37,9 @@ exports.get = function(req,res){
   connection.connect(function(err){
   if (err) throw err;
   connection.query('USE fbdb');
-  connection.query("INSERT INTO feedback VALUES('2', '" + data['free-text'] + "')", function(err, result){
+  connection.query('SELECT * FROM feedback', function(err, rows){
     if (err) throw err;
-    connection.query('SELECT * FROM feedback', function(err, rows){
-      if (err) throw err;
-      res.json(rows);
-      });
+    res.json(rows);
     });
   });
-
 }

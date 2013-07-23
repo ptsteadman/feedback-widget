@@ -31,13 +31,3 @@ exports.testDB = function(test){
  		});
 	});
 }
-
-exports.testTesting = function(test){
-  var res;
-  var dbRows = feedback.get({}, res);
-  console.log("JSON rows");
-  console.log(res);
-
-  test.ok(res, "JSON API works.");
-  test.done();
-}
