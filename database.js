@@ -14,8 +14,8 @@ exports.getAllFeedback = function(callback){
     connection.query('USE fbdb');
     connection.query('SELECT * FROM feedback', function(err, rows){
       if (err) throw err;
-      callback(rows);
       connection.end();
+      callback(rows);
       });
   });
 }
@@ -25,8 +25,8 @@ exports.addFeedback = function(data, callback){
     if (err) throw err;
     connection.query('USE fbdb');
    	connection.query("INSERT INTO feedback VALUES('2', '" + data['free-text'] + "')", function(err, result){
+   		   		connection.end();
    		callback(err);
-   		connection.end();
    	});
   });
 }
