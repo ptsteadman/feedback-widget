@@ -1,5 +1,6 @@
 var mysql = require('mysql');
-var config = require('../config')
+var config = require('../config');
+var feedback = require('../routes/feedback');
 
 exports.testTesting = function(test){
 	test.ok(true, "this should work");
@@ -14,6 +15,8 @@ exports.testDB = function(test){
   	port: config.mysql.port
   });
 
+  console.log(config.mysql.host);
+
   connection.connect(function(err){
   	if (err) throw err;
   	connection.query("USE " + config.mysql.db);
@@ -27,4 +30,14 @@ exports.testDB = function(test){
  			});
  		});
 	});
+}
+
+exports.testTesting = function(test){
+  var res;
+  var dbRows = feedback.get({}, res);
+  console.log("JSON rows");
+  console.log(res);
+
+  test.ok(res, "JSON API works.");
+  test.done();
 }

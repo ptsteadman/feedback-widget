@@ -25,5 +25,6 @@ if ('development' == app.get('env')) {
 app.get('/', routes.index);
 app.get('/users', user.list);
 app.post('/', feedback.post);
+app.get('/feedback', feedback.get);
 
 app.listen(3003);
