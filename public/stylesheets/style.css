@@ -3,6 +3,25 @@ body {
   font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
 }
 
+.feedback-unit{
+	padding-bottom: 20px;
+}
+
 a {
   color: #00B7FF;
+}
+
+b {
+	font-weight: bold;
+}
+
+p {
+	padding: 0px;
+	margin-bottom: 0px;
+	line-height: 15px;
+}
+
+header {
+	padding-top: 20px;
+	padding-bottom: 20px;
 }

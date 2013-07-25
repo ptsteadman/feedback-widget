@@ -5,13 +5,27 @@
     <link rel='stylesheet' href='/stylesheets/style.css' />
   </head>
   <body>
-  	<h1><%= title %></h1>
-  	<div id="feedback"></div>
+  	<h1>Feedback Mini Service</h1>
+
+  	  <header>
+    		<button id="deleteAll" type="button">Delete All Feedback</button>
+  			<button id="createTable" type="button">Create New Feedback Table</button>
+			</header>
+  	<div id="feedback">
+
+
+  	</div>
   	<script id="feedbackTemplate" type="text/template">
-  		<p>{{ ID }}</p>
-  		<p>{{ fbText }} fbText</p>
+  	<div class="feedback-unit">
+  		<p><b>ID:</b> {{ id }}</p>
+  		<p><b>Free Text:</b> "{{ text }}"</p>
+  		<p><b>Date Submitted:</b> {{ date }}</p>
+  		<p><b>Satisfaction:</b>{{ satisfaction }}</p>
+  		<p><b>Site Path:</b> {{ site  }}</p>
+  	</div>
   	</script>
 		<script src="js/jquery-1.10.2.min.js"></script>
+		<script src="js/socket.io.js"></script>
 		<script src="js/underscore-min.js"></script>
 		<script src="js/backbone-min.js"></script>
 		<script src="js/feedback-dash.js"></script>
