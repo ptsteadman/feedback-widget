@@ -116,7 +116,6 @@
         */
 
         setUpSocket: function(feedbackList, self){
-          io.set('transports', ['xhr-polling']);
           var socket = io.connect('http://feedback.psteadman.com');
 
           socket.on('new', function(){
