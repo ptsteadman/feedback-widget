@@ -116,7 +116,7 @@
         */
 
         setUpSocket: function(feedbackList, self){
-          var socket = io.connect('http://feedback.psteadman.com');
+          var socket = io.connect('http://localhost');
 
           socket.on('new', function(){
             feedbackList.reset();
